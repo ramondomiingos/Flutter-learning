@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             padding: EdgeInsets.only(top:12),
             width:MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height/2,
+           // height: MediaQuery.of(context).size.height/2,
             decoration:  BoxDecoration(
                 color: green,
                 borderRadius: BorderRadius.only(
@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left:20, right: 20),
+                  padding: const EdgeInsets.only(left:20, right: 20, bottom : 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -170,6 +170,74 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
               ],
             ),
+          ),
+          Container(
+            padding: EdgeInsets.all(32),
+
+            child: Column(
+
+              children: <Widget>[
+
+                Row(
+
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+
+                    Column(
+                      children: <Widget>[
+                        Icon(Icons.table_chart, color: Colors.grey),
+                        Text("Leaders",
+                        style: TextStyle(color:Colors.grey,fontWeight: FontWeight.bold))
+                      ],
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Icon(Icons.assignment_ind, color: Colors.grey),
+                        Text("Level up",
+                            style: TextStyle(color:Colors.grey,fontWeight: FontWeight.bold))
+                      ],
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Icon(Icons.card_giftcard, color: Colors.grey),
+                        Text("Gift",
+                            style: TextStyle(color:Colors.grey,fontWeight: FontWeight.bold))
+                      ],
+                    )
+                  ],
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+
+                    Column(
+                      children: <Widget>[
+                        Icon(Icons.code, color: Colors.grey),
+                        Text("Qrcode",
+                            style: TextStyle(color:Colors.grey,fontWeight: FontWeight.bold))
+                      ],
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Icon(Icons.blur_on, color: Colors.grey),
+                        Text("Bonus",
+                            style: TextStyle(color:Colors.grey,fontWeight: FontWeight.bold))
+                      ],
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Icon(Icons.graphic_eq, color: Colors.grey),
+                        Text("Visitors",
+                            style: TextStyle(color:Colors.grey,fontWeight: FontWeight.bold))
+                      ],
+                    )
+                  ],
+                ),
+
+              ],
+            ),
+
           )
         ],
       ),
