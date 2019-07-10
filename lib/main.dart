@@ -9,15 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
+
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Projeto inicial '),
@@ -37,9 +29,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final Color green = Color(0xFF1E8161);
+  final String url_image = "http://pbs.twimg.com/profile_images/996908496732946432/sVPsfsCw_200x200.jpg";
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
@@ -56,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         children: <Widget>[
           Container(
+            padding: EdgeInsets.only(top:12),
             width:MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height/2,
             decoration:  BoxDecoration(
@@ -65,7 +58,116 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             child: Column(
               children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: Column(
+                children: <Widget>[
+                      Text('Followers',
+                          style: TextStyle(
+                              color:Colors.white),
+                      ),
+                      Text('12',
+                            style: TextStyle(
+                                color:Colors.white, fontWeight : FontWeight.bold),
+                          )
+                       ],
+                      ),
+                    ),
 
+                    Container(
+                      width: 120,
+                      height: 120,
+                      //image: NetworkImage(url_image),
+                        decoration: new BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: new DecorationImage(
+                                fit: BoxFit.fill,
+                                image: new NetworkImage(
+                                    url_image)
+                            )
+                        )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 20),
+                      child: Column(
+                        children: <Widget>[
+                          Text('Following',
+                          style: TextStyle(
+                            color:Colors.white
+                          ),),
+                          Text('8',
+                          style: TextStyle(
+                            color: Colors.white, fontWeight : FontWeight.bold
+                          ))
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top:10),
+                  child: Text("ID: 123234234234", style: TextStyle(
+                    color:Colors.white
+                  ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top:16, bottom: 32),
+                  child: Text("Ramon Domingos",
+                      style : TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight : FontWeight.bold
+                  )
+               ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left:20, right: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Column(
+                        children: <Widget>[
+                          Icon(Icons.group_add, color: Colors.white),
+                          Text('Friends',
+                                        style:
+                                        TextStyle
+                                          (color: Colors.white))
+                        ],
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Icon(Icons.videocam, color: Colors.white),
+                          Text('Videos',
+                              style:
+                              TextStyle
+                                (color: Colors.white))
+                        ],
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Icon(Icons.group, color: Colors.white),
+                          Text('Groups',
+                              style:
+                              TextStyle
+                                (color: Colors.white))
+                        ],
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Icon(Icons.favorite_border, color: Colors.white),
+                          Text('Like',
+                              style:
+                              TextStyle
+                                (color: Colors.white))
+                        ],
+                      )
+                    ],
+          ),
+                )
               ],
             ),
           )
