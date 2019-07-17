@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login2.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -22,7 +23,14 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: green,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
-          onPressed: (){},
+          onPressed: (){
+
+              //Use`Navigator` widget to push the second screen to out stack of screens
+              Navigator.of(context)
+                  .push(MaterialPageRoute<Null>(builder: (BuildContext context) {
+                return new login2();
+              }));
+          },
         ),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.search), onPressed: (){})

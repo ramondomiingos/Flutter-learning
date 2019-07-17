@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'profile.dart';
 
 class login2 extends StatefulWidget {
   @override
@@ -21,7 +22,7 @@ class _login2State extends State<login2> {
         child: Stack(
           children: <Widget>[
             Opacity(
-                opacity: 0.5,
+                opacity: 0.9,
             child: Image.asset(
 
               "images/pipa2.jpg",
@@ -33,7 +34,7 @@ class _login2State extends State<login2> {
               child: Text(
                 "Login",
                 style: TextStyle(
-                  color: Colors.deepOrange,
+                  color: Color(0xFF1E8161),
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
 
@@ -81,19 +82,29 @@ class _login2State extends State<login2> {
                       height: 50,
                       width: double.maxFinite,
                       decoration: BoxDecoration(
-                        color: Colors.deepOrange,
+                        color: Color(0xFF1E8161),
                         borderRadius: BorderRadius.all(
                           Radius.circular(32)
                         )
                       ),
                       child: Center(
-                        child: Text('Login!',
+
+                        child: RaisedButton(
+                            color: Color(0xFF1E8161),
+                            child: Text('Login!',
                         style: TextStyle(
                           color: Colors.white,
                             fontWeight: FontWeight.bold,
                           fontSize: 20
 
-                        ))
+                        )),
+                          onPressed: () {
+                            //Use`Navigator` widget to push the second screen to out stack of screens
+                            Navigator.of(context)
+                                .push(MaterialPageRoute<Null>(builder: (BuildContext context) {
+                              return new MyHomePage();
+                            }));
+                          },                      ),
                       ),
                     ),
 
